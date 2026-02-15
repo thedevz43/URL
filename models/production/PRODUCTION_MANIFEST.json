@@ -1,0 +1,16 @@
+{
+  "promoted_date": "2026-02-15T15:21:38.760547",
+  "model_name": "url_detector_improved",
+  "governance_score": 66.99,
+  "mandatory_criteria_passed": true,
+  "files": {
+    "model": "model.h5",
+    "preprocessor": "preprocessor.pkl",
+    "metadata": "metadata.json",
+    "stress_test": "stress_test_report.json",
+    "evaluation": "evaluation_metrics.json"
+  },
+  "fp_rate": 0.6739394505699825,
+  "detection_rate": 96.84104297214203,
+  "test_accuracy": 0.9850029349327087
+}

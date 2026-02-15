@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-02-13T18:17:46.401561",
+  "data_path": "data/malicious_phish_augmented.csv",
+  "model_path": "models/url_detector_augmented.h5",
+  "preprocessor_path": "models/preprocessor_augmented.pkl",
+  "architecture": "multi_input_cnn",
+  "total_parameters": 424132,
+  "trainable_parameters": 424132,
+  "training": {
+    "epochs_run": 10,
+    "epochs_max": 10,
+    "batch_size": 256,
+    "patience": 3,
+    "training_time_seconds": 5863.39363
+  },
+  "dataset": {
+    "train_samples": 528552,
+    "test_samples": 132139,
+    "n_classes": 4,
+    "class_names": [
+      "benign",
+      "defacement",
+      "malware",
+      "phishing"
+    ]
+  },
+  "performance": {
+    "test_accuracy": 0.9796501994132996,
+    "test_loss": 0.007166391704231501,
+    "final_train_accuracy": 0.9740025401115417,
+    "final_val_accuracy": 0.9796501994132996
+  },
+  "class_weights": {
+    "benign": 0.3689758489449097,
+    "defacement": 1.7330482910578915,
+    "malware": 6.9855149080143795,
+    "phishing": 1.755543450823048
+  }
+}

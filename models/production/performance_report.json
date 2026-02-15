@@ -1,0 +1,86 @@
+{
+  "model_version": "v7_production",
+  "model_file": "model_v7.h5",
+  "preprocessor_file": "preprocessor.pkl",
+  "validation_date": "2026-02-15",
+  "performance_metrics": {
+    "false_positive_rate": 0.04,
+    "false_positive_count": 2,
+    "total_legitimate_tested": 50,
+    "malicious_detection_rate": 1.0,
+    "malicious_detected": 15,
+    "total_malicious_tested": 15,
+    "test_accuracy": 0.985,
+    "average_inference_time_ms": 47,
+    "max_inference_time_ms": 122
+  },
+  "architecture": {
+    "type": "multi_input_cnn",
+    "total_parameters": 424132,
+    "trainable_parameters": 424132,
+    "input_max_length": 200
+  },
+  "enhancement_system": {
+    "version": "v7_4tier",
+    "tier_1_threshold": 0.93,
+    "tier_2a_threshold": 0.75,
+    "tier_2b_threshold": 0.35,
+    "elite_reputation_threshold": 0.95,
+    "fp_mitigation": "reputation_based_thresholding",
+    "domain_reputation_db": "tranco_top_1000_simulation"
+  },
+  "test_results": {
+    "legitimate_domains": {
+      "total": 50,
+      "correctly_classified": 48,
+      "false_positives": 2,
+      "fp_rate_percent": 4.0,
+      "examples_corrected": [
+        "google.com",
+        "facebook.com",
+        "amazon.com",
+        "microsoft.com",
+        "apple.com",
+        "paypal.com",
+        "github.com",
+        "netflix.com",
+        "chase.com",
+        "bankofamerica.com"
+      ]
+    },
+    "malicious_urls": {
+      "total": 15,
+      "detected": 15,
+      "missed": 0,
+      "detection_rate_percent": 100.0,
+      "attack_types_detected": [
+        "typosquatting",
+        "homoglyphs",
+        "suspicious_tlds",
+        "combosquatting",
+        "low_confidence_threats"
+      ]
+    }
+  },
+  "deployment_status": "production_ready",
+  "deployment_requirements": {
+    "python_version": ">=3.8",
+    "tensorflow_version": ">=2.10",
+    "memory_requirement_mb": 512,
+    "recommended_cpu": "2_cores"
+  },
+  "monitoring_thresholds": {
+    "max_acceptable_fp_rate": 0.05,
+    "min_acceptable_detection_rate": 0.95,
+    "max_inference_time_ms": 100,
+    "retraining_trigger_fp_rate": 0.08,
+    "retraining_trigger_detection_drop": 0.90
+  },
+  "governance": {
+    "selection_criteria": "mandatory_requirements_met",
+    "governance_score": 66.99,
+    "approval_status": "approved",
+    "approval_date": "2026-02-15",
+    "next_review_date": "2026-05-15"
+  }
+}

@@ -1,0 +1,2165 @@
+{
+  "timestamp": "2026-02-15T14:16:06.149748",
+  "model": "models/url_detector_augmented.h5",
+  "summary": {
+    "total_urls": 400,
+    "total_domains": 50,
+    "false_positives": 250,
+    "false_positive_rate": 0.625,
+    "perfect_domains": 0
+  },
+  "per_domain_stats": {
+    "google.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "youtube.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "facebook.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "amazon.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "wikipedia.org": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "twitter.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "instagram.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "linkedin.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "reddit.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "netflix.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "microsoft.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "apple.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "github.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "stackoverflow.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "docs.python.org": {
+      "total": 8,
+      "false_positives": 8,
+      "fp_rate": 1.0,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "phishing",
+        "phishing",
+        "phishing",
+        "phishing",
+        "phishing",
+        "phishing"
+      ]
+    },
+    "npmjs.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "medium.com": {
+      "total": 8,
+      "false_positives": 4,
+      "fp_rate": 0.5,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "benign",
+        "benign",
+        "phishing"
+      ]
+    },
+    "quora.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "pinterest.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "tumblr.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "wordpress.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "blogger.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "vimeo.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "flickr.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "soundcloud.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "spotify.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "twitch.tv": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "dropbox.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "adobe.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "salesforce.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "oracle.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "ibm.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "intel.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "nvidia.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "cisco.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "paypal.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "ebay.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "aliexpress.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "walmart.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "target.com": {
+      "total": 8,
+      "false_positives": 4,
+      "fp_rate": 0.5,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "benign",
+        "benign",
+        "phishing"
+      ]
+    },
+    "bestbuy.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "homedepot.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "ikea.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "bankofamerica.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "chase.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "wellsfargo.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "citibank.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "capitalone.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "discover.com": {
+      "total": 8,
+      "false_positives": 5,
+      "fp_rate": 0.625,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "phishing"
+      ]
+    },
+    "nytimes.com": {
+      "total": 8,
+      "false_positives": 4,
+      "fp_rate": 0.5,
+      "predictions": [
+        "phishing",
+        "phishing",
+        "benign",
+        "phishing",
+        "benign",
+        "benign",
+        "benign",
+        "phishing"
+      ]
+    }
+  },
+  "detailed_results": [
+    {
+      "url": "https://google.com",
+      "domain": "google.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7769672870635986,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.0016015683067962527,
+        "defacement": 0.0009727947181090713,
+        "malware": 0.22045831382274628,
+        "phishing": 0.7769672870635986
+      }
+    },
+    {
+      "url": "https://www.google.com",
+      "domain": "google.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7633486986160278,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.0023606610484421253,
+        "defacement": 0.002970739733427763,
+        "malware": 0.23131997883319855,
+        "phishing": 0.7633486986160278
+      }
+    },
+    {
+      "url": "https://google.com/login",
+      "domain": "google.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.950170636177063,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.950170636177063,
+        "defacement": 9.439998116533843e-09,
+        "malware": 4.460502367464869e-08,
+        "phishing": 0.04982941597700119
+      }
+    },
+    {
+      "url": "https://www.google.com/account",
+      "domain": "google.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8477724194526672,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.06524418294429779,
+        "defacement": 0.004392407368868589,
+        "malware": 0.08259104192256927,
+        "phishing": 0.8477724194526672
+      }
+    },
+    {
+      "url": "https://google.com/docs",
+      "domain": "google.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.9171967506408691,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.9171967506408691,
+        "defacement": 1.281273540598704e-07,
+        "malware": 5.279825927573256e-07,
+        "phishing": 0.08280257880687714
+      }
+    },
+    {
+      "url": "https://api.google.com/v1",
+      "domain": "google.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.6452441811561584,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.12277311086654663,
+        "defacement": 0.0034820297732949257,
+        "malware": 0.228500634431839,
+        "phishing": 0.6452441811561584
+      }
+    },
+    {
+      "url": "https://google.com/products",
+      "domain": "google.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.9161471724510193,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.9161471724510193,
+        "defacement": 1.3558155842474662e-07,
+        "malware": 5.470532187246135e-07,
+        "phishing": 0.083852119743824
+      }
+    },
+    {
+      "url": "https://support.google.com",
+      "domain": "google.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7915812134742737,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.004913333337754011,
+        "defacement": 0.002296121558174491,
+        "malware": 0.20120930671691895,
+        "phishing": 0.7915812134742737
+      }
+    },
+    {
+      "url": "https://youtube.com",
+      "domain": "youtube.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7908390164375305,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.0024969647638499737,
+        "defacement": 0.0011499327374622226,
+        "malware": 0.2055141031742096,
+        "phishing": 0.7908390164375305
+      }
+    },
+    {
+      "url": "https://www.youtube.com",
+      "domain": "youtube.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8031697273254395,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.006085297558456659,
+        "defacement": 0.0036627885419875383,
+        "malware": 0.18708212673664093,
+        "phishing": 0.8031697273254395
+      }
+    },
+    {
+      "url": "https://youtube.com/login",
+      "domain": "youtube.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.9240158796310425,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.9240158796310425,
+        "defacement": 6.050444056882043e-08,
+        "malware": 2.9153497393963335e-07,
+        "phishing": 0.07598374038934708
+      }
+    },
+    {
+      "url": "https://www.youtube.com/account",
+      "domain": "youtube.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8768683075904846,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.06269355863332748,
+        "defacement": 0.0038563606794923544,
+        "malware": 0.05658181011676788,
+        "phishing": 0.8768683075904846
+      }
+    },
+    {
+      "url": "https://youtube.com/docs",
+      "domain": "youtube.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.9340529441833496,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.9340529441833496,
+        "defacement": 1.3798606346426823e-07,
+        "malware": 5.387734631767671e-07,
+        "phishing": 0.06594634801149368
+      }
+    },
+    {
+      "url": "https://api.youtube.com/v1",
+      "domain": "youtube.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.6479756832122803,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.30648306012153625,
+        "defacement": 0.001702081528492272,
+        "malware": 0.04383918270468712,
+        "phishing": 0.6479756832122803
+      }
+    },
+    {
+      "url": "https://youtube.com/products",
+      "domain": "youtube.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.9171178340911865,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.9171178340911865,
+        "defacement": 2.3233721435644838e-07,
+        "malware": 8.035277687667985e-07,
+        "phishing": 0.08288116753101349
+      }
+    },
+    {
+      "url": "https://support.youtube.com",
+      "domain": "youtube.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8216426372528076,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.00537501135841012,
+        "defacement": 0.00263583124615252,
+        "malware": 0.17034652829170227,
+        "phishing": 0.8216426372528076
+      }
+    },
+    {
+      "url": "https://facebook.com",
+      "domain": "facebook.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7868281602859497,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.001288469647988677,
+        "defacement": 0.0009416717803105712,
+        "malware": 0.21094173192977905,
+        "phishing": 0.7868281602859497
+      }
+    },
+    {
+      "url": "https://www.facebook.com",
+      "domain": "facebook.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7963268160820007,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.0023400515783578157,
+        "defacement": 0.0028771485667675734,
+        "malware": 0.19845598936080933,
+        "phishing": 0.7963268160820007
+      }
+    },
+    {
+      "url": "https://facebook.com/login",
+      "domain": "facebook.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.9706180095672607,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.9706180095672607,
+        "defacement": 1.1971177382719134e-09,
+        "malware": 5.403404834680714e-09,
+        "phishing": 0.029381966218352318
+      }
+    },
+    {
+      "url": "https://www.facebook.com/account",
+      "domain": "facebook.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8791280388832092,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.05412165820598602,
+        "defacement": 0.0042242067866027355,
+        "malware": 0.06252612173557281,
+        "phishing": 0.8791280388832092
+      }
+    },
+    {
+      "url": "https://facebook.com/docs",
+      "domain": "facebook.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.9526342749595642,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.9526342749595642,
+        "defacement": 3.00161957511591e-08,
+        "malware": 1.0600319200193553e-07,
+        "phishing": 0.047365620732307434
+      }
+    },
+    {
+      "url": "https://api.facebook.com/v1",
+      "domain": "facebook.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.6187394261360168,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.35808080434799194,
+        "defacement": 0.002169110346585512,
+        "malware": 0.021010611206293106,
+        "phishing": 0.6187394261360168
+      }
+    },
+    {
+      "url": "https://facebook.com/products",
+      "domain": "facebook.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.956989049911499,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.956989049911499,
+        "defacement": 2.7134097635439502e-08,
+        "malware": 7.084352660058357e-08,
+        "phishing": 0.04301085323095322
+      }
+    },
+    {
+      "url": "https://support.facebook.com",
+      "domain": "facebook.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8068780899047852,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.0032488496508449316,
+        "defacement": 0.0023416136391460896,
+        "malware": 0.1875314563512802,
+        "phishing": 0.8068780899047852
+      }
+    },
+    {
+      "url": "https://amazon.com",
+      "domain": "amazon.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7949152588844299,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.0031052236445248127,
+        "defacement": 0.0013780397130176425,
+        "malware": 0.2006015181541443,
+        "phishing": 0.7949152588844299
+      }
+    },
+    {
+      "url": "https://www.amazon.com",
+      "domain": "amazon.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8390948176383972,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.006918859202414751,
+        "defacement": 0.004256066400557756,
+        "malware": 0.14973026514053345,
+        "phishing": 0.8390948176383972
+      }
+    },
+    {
+      "url": "https://amazon.com/login",
+      "domain": "amazon.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.9621540307998657,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.9621540307998657,
+        "defacement": 3.25065419026771e-09,
+        "malware": 1.451436482113877e-08,
+        "phishing": 0.037846025079488754
+      }
+    },
+    {
+      "url": "https://www.amazon.com/account",
+      "domain": "amazon.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8940589427947998,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.06413855403661728,
+        "defacement": 0.0031937214080244303,
+        "malware": 0.0386088527739048,
+        "phishing": 0.8940589427947998
+      }
+    },
+    {
+      "url": "https://amazon.com/docs",
+      "domain": "amazon.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.9461707472801208,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.9461707472801208,
+        "defacement": 2.2178644698556127e-08,
+        "malware": 8.73520988875498e-08,
+        "phishing": 0.05382916331291199
+      }
+    },
+    {
+      "url": "https://api.amazon.com/v1",
+      "domain": "amazon.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.5247806906700134,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.4684709906578064,
+        "defacement": 0.0007600706303492188,
+        "malware": 0.005988196469843388,
+        "phishing": 0.5247806906700134
+      }
+    },
+    {
+      "url": "https://amazon.com/products",
+      "domain": "amazon.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.9417113065719604,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.9417113065719604,
+        "defacement": 3.5485889782194135e-08,
+        "malware": 1.1896960927515465e-07,
+        "phishing": 0.058288510888814926
+      }
+    },
+    {
+      "url": "https://support.amazon.com",
+      "domain": "amazon.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8160467147827148,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.003826112486422062,
+        "defacement": 0.0024945130571722984,
+        "malware": 0.17763258516788483,
+        "phishing": 0.8160467147827148
+      }
+    },
+    {
+      "url": "https://wikipedia.org",
+      "domain": "wikipedia.org",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7483983635902405,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.0032004795502871275,
+        "defacement": 0.0012610902776941657,
+        "malware": 0.2471400648355484,
+        "phishing": 0.7483983635902405
+      }
+    },
+    {
+      "url": "https://www.wikipedia.org",
+      "domain": "wikipedia.org",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8201814889907837,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.00501914881169796,
+        "defacement": 0.004301882348954678,
+        "malware": 0.17049738764762878,
+        "phishing": 0.8201814889907837
+      }
+    },
+    {
+      "url": "https://wikipedia.org/login",
+      "domain": "wikipedia.org",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8424622416496277,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8424622416496277,
+        "defacement": 1.6755157048464753e-06,
+        "malware": 7.717985681665596e-06,
+        "phishing": 0.15752831101417542
+      }
+    },
+    {
+      "url": "https://www.wikipedia.org/account",
+      "domain": "wikipedia.org",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8922163844108582,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.028520366176962852,
+        "defacement": 0.004624899011105299,
+        "malware": 0.07463835179805756,
+        "phishing": 0.8922163844108582
+      }
+    },
+    {
+      "url": "https://wikipedia.org/docs",
+      "domain": "wikipedia.org",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.7926350831985474,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.7926350831985474,
+        "defacement": 1.127415362134343e-05,
+        "malware": 4.245745003572665e-05,
+        "phishing": 0.20731118321418762
+      }
+    },
+    {
+      "url": "https://api.wikipedia.org/v1",
+      "domain": "wikipedia.org",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8122738003730774,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.0333695113658905,
+        "defacement": 0.006150432396680117,
+        "malware": 0.14820629358291626,
+        "phishing": 0.8122738003730774
+      }
+    },
+    {
+      "url": "https://wikipedia.org/products",
+      "domain": "wikipedia.org",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8171337246894836,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8171337246894836,
+        "defacement": 4.381593498692382e-06,
+        "malware": 1.7082800695789047e-05,
+        "phishing": 0.18284489214420319
+      }
+    },
+    {
+      "url": "https://support.wikipedia.org",
+      "domain": "wikipedia.org",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8074109554290771,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.0044050379656255245,
+        "defacement": 0.0026181936264038086,
+        "malware": 0.185565784573555,
+        "phishing": 0.8074109554290771
+      }
+    },
+    {
+      "url": "https://twitter.com",
+      "domain": "twitter.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7832367420196533,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.003110382007434964,
+        "defacement": 0.0011459357338026166,
+        "malware": 0.21250692009925842,
+        "phishing": 0.7832367420196533
+      }
+    },
+    {
+      "url": "https://www.twitter.com",
+      "domain": "twitter.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8118205070495605,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.006277068518102169,
+        "defacement": 0.0038600817788392305,
+        "malware": 0.17804232239723206,
+        "phishing": 0.8118205070495605
+      }
+    },
+    {
+      "url": "https://twitter.com/login",
+      "domain": "twitter.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8879590630531311,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8879590630531311,
+        "defacement": 3.052335841857712e-07,
+        "malware": 1.5988947552614263e-06,
+        "phishing": 0.11203905940055847
+      }
+    },
+    {
+      "url": "https://www.twitter.com/account",
+      "domain": "twitter.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.886359453201294,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.07208927720785141,
+        "defacement": 0.0031630168668925762,
+        "malware": 0.03838823363184929,
+        "phishing": 0.886359453201294
+      }
+    },
+    {
+      "url": "https://twitter.com/docs",
+      "domain": "twitter.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8768882751464844,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8768882751464844,
+        "defacement": 1.2056902960466687e-06,
+        "malware": 4.9881291488418356e-06,
+        "phishing": 0.12310543656349182
+      }
+    },
+    {
+      "url": "https://api.twitter.com/v1",
+      "domain": "twitter.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7853085398674011,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.19022291898727417,
+        "defacement": 0.0020671889651566744,
+        "malware": 0.02240128256380558,
+        "phishing": 0.7853085398674011
+      }
+    },
+    {
+      "url": "https://twitter.com/products",
+      "domain": "twitter.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8676109313964844,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8676109313964844,
+        "defacement": 1.0735799378380761e-06,
+        "malware": 4.3793770601041615e-06,
+        "phishing": 0.13238371908664703
+      }
+    },
+    {
+      "url": "https://support.twitter.com",
+      "domain": "twitter.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.827231764793396,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.003932215739041567,
+        "defacement": 0.002642012434080243,
+        "malware": 0.16619399189949036,
+        "phishing": 0.827231764793396
+      }
+    },
+    {
+      "url": "https://instagram.com",
+      "domain": "instagram.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8013473153114319,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.0027833699714392424,
+        "defacement": 0.0016810771776363254,
+        "malware": 0.19418814778327942,
+        "phishing": 0.8013473153114319
+      }
+    },
+    {
+      "url": "https://www.instagram.com",
+      "domain": "instagram.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8197104930877686,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.006119630765169859,
+        "defacement": 0.0037660549860447645,
+        "malware": 0.1704038828611374,
+        "phishing": 0.8197104930877686
+      }
+    },
+    {
+      "url": "https://instagram.com/login",
+      "domain": "instagram.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8555763959884644,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8555763959884644,
+        "defacement": 1.056773839991365e-06,
+        "malware": 5.347244496078929e-06,
+        "phishing": 0.14441727101802826
+      }
+    },
+    {
+      "url": "https://www.instagram.com/account",
+      "domain": "instagram.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.885362446308136,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.03711535409092903,
+        "defacement": 0.004254629369825125,
+        "malware": 0.07326759397983551,
+        "phishing": 0.885362446308136
+      }
+    },
+    {
+      "url": "https://instagram.com/docs",
+      "domain": "instagram.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8338384032249451,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8338384032249451,
+        "defacement": 3.802301989708212e-06,
+        "malware": 1.5334315321524628e-05,
+        "phishing": 0.16614243388175964
+      }
+    },
+    {
+      "url": "https://api.instagram.com/v1",
+      "domain": "instagram.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7394775152206421,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.008717073127627373,
+        "defacement": 0.0048225573264062405,
+        "malware": 0.24698281288146973,
+        "phishing": 0.7394775152206421
+      }
+    },
+    {
+      "url": "https://instagram.com/products",
+      "domain": "instagram.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8273574113845825,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8273574113845825,
+        "defacement": 5.143661383044673e-06,
+        "malware": 1.74643901118543e-05,
+        "phishing": 0.1726200133562088
+      }
+    },
+    {
+      "url": "https://support.instagram.com",
+      "domain": "instagram.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8158203363418579,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.003404706483706832,
+        "defacement": 0.002501159207895398,
+        "malware": 0.1782737821340561,
+        "phishing": 0.8158203363418579
+      }
+    },
+    {
+      "url": "https://linkedin.com",
+      "domain": "linkedin.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7727938294410706,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.002434326568618417,
+        "defacement": 0.0011442138347774744,
+        "malware": 0.22362765669822693,
+        "phishing": 0.7727938294410706
+      }
+    },
+    {
+      "url": "https://www.linkedin.com",
+      "domain": "linkedin.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7912644743919373,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.0025896814186125994,
+        "defacement": 0.004075180739164352,
+        "malware": 0.20207062363624573,
+        "phishing": 0.7912644743919373
+      }
+    },
+    {
+      "url": "https://linkedin.com/login",
+      "domain": "linkedin.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.9365718364715576,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.9365718364715576,
+        "defacement": 2.6962421628695665e-08,
+        "malware": 1.2609829980192444e-07,
+        "phishing": 0.06342799961566925
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/account",
+      "domain": "linkedin.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8639002442359924,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.03487690910696983,
+        "defacement": 0.005336861126124859,
+        "malware": 0.09588593244552612,
+        "phishing": 0.8639002442359924
+      }
+    },
+    {
+      "url": "https://linkedin.com/docs",
+      "domain": "linkedin.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.909679114818573,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.909679114818573,
+        "defacement": 3.352834312408959e-07,
+        "malware": 1.4385175290954066e-06,
+        "phishing": 0.09031912684440613
+      }
+    },
+    {
+      "url": "https://api.linkedin.com/v1",
+      "domain": "linkedin.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7471324801445007,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.09552796185016632,
+        "defacement": 0.006100560538470745,
+        "malware": 0.15123893320560455,
+        "phishing": 0.7471324801445007
+      }
+    },
+    {
+      "url": "https://linkedin.com/products",
+      "domain": "linkedin.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.9017971158027649,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.9017971158027649,
+        "defacement": 3.9724747580294206e-07,
+        "malware": 1.4809926369707682e-06,
+        "phishing": 0.0982009544968605
+      }
+    },
+    {
+      "url": "https://support.linkedin.com",
+      "domain": "linkedin.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7982932329177856,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.002629530383273959,
+        "defacement": 0.0023322782944887877,
+        "malware": 0.19674499332904816,
+        "phishing": 0.7982932329177856
+      }
+    },
+    {
+      "url": "https://reddit.com",
+      "domain": "reddit.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.791435182094574,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.0023946783039718866,
+        "defacement": 0.001288407831452787,
+        "malware": 0.20488175749778748,
+        "phishing": 0.791435182094574
+      }
+    },
+    {
+      "url": "https://www.reddit.com",
+      "domain": "reddit.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.835621178150177,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.006033583544194698,
+        "defacement": 0.004868293646723032,
+        "malware": 0.15347690880298615,
+        "phishing": 0.835621178150177
+      }
+    },
+    {
+      "url": "https://reddit.com/login",
+      "domain": "reddit.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.922395646572113,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.922395646572113,
+        "defacement": 7.377472144298736e-08,
+        "malware": 3.2262832405649533e-07,
+        "phishing": 0.07760392874479294
+      }
+    },
+    {
+      "url": "https://www.reddit.com/account",
+      "domain": "reddit.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8958612084388733,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.058970753103494644,
+        "defacement": 0.0033478247933089733,
+        "malware": 0.04182025045156479,
+        "phishing": 0.8958612084388733
+      }
+    },
+    {
+      "url": "https://reddit.com/docs",
+      "domain": "reddit.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8937931656837463,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8937931656837463,
+        "defacement": 4.1074403611673915e-07,
+        "malware": 1.592939042893704e-06,
+        "phishing": 0.10620485246181488
+      }
+    },
+    {
+      "url": "https://api.reddit.com/v1",
+      "domain": "reddit.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7788987755775452,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.12408474832773209,
+        "defacement": 0.003733280347660184,
+        "malware": 0.09328320622444153,
+        "phishing": 0.7788987755775452
+      }
+    },
+    {
+      "url": "https://reddit.com/products",
+      "domain": "reddit.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8736666440963745,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8736666440963745,
+        "defacement": 1.1255770004936494e-06,
+        "malware": 3.5454188491712557e-06,
+        "phishing": 0.12632867693901062
+      }
+    },
+    {
+      "url": "https://support.reddit.com",
+      "domain": "reddit.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8240875601768494,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.004813514184206724,
+        "defacement": 0.002676496049389243,
+        "malware": 0.1684223711490631,
+        "phishing": 0.8240875601768494
+      }
+    },
+    {
+      "url": "https://netflix.com",
+      "domain": "netflix.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7937777042388916,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.0025932108983397484,
+        "defacement": 0.0013332287780940533,
+        "malware": 0.20229578018188477,
+        "phishing": 0.7937777042388916
+      }
+    },
+    {
+      "url": "https://www.netflix.com",
+      "domain": "netflix.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8335762619972229,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.007582168094813824,
+        "defacement": 0.003986951895058155,
+        "malware": 0.15485462546348572,
+        "phishing": 0.8335762619972229
+      }
+    },
+    {
+      "url": "https://netflix.com/login",
+      "domain": "netflix.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8384079933166504,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8384079933166504,
+        "defacement": 1.4980098512751283e-06,
+        "malware": 7.283487775566755e-06,
+        "phishing": 0.16158325970172882
+      }
+    },
+    {
+      "url": "https://www.netflix.com/account",
+      "domain": "netflix.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8909753561019897,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.050865575671195984,
+        "defacement": 0.003843299811705947,
+        "malware": 0.054315779358148575,
+        "phishing": 0.8909753561019897
+      }
+    },
+    {
+      "url": "https://netflix.com/docs",
+      "domain": "netflix.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.840915322303772,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.840915322303772,
+        "defacement": 3.2230009310296737e-06,
+        "malware": 1.2009164493065327e-05,
+        "phishing": 0.15906941890716553
+      }
+    },
+    {
+      "url": "https://api.netflix.com/v1",
+      "domain": "netflix.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8230265974998474,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.1313401162624359,
+        "defacement": 0.0028671775944530964,
+        "malware": 0.042766109108924866,
+        "phishing": 0.8230265974998474
+      }
+    },
+    {
+      "url": "https://netflix.com/products",
+      "domain": "netflix.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8177598118782043,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8177598118782043,
+        "defacement": 4.849584456678713e-06,
+        "malware": 1.6934514860622585e-05,
+        "phishing": 0.18221832811832428
+      }
+    },
+    {
+      "url": "https://support.netflix.com",
+      "domain": "netflix.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8315653204917908,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.007696080952882767,
+        "defacement": 0.0028257230296730995,
+        "malware": 0.15791286528110504,
+        "phishing": 0.8315653204917908
+      }
+    },
+    {
+      "url": "https://microsoft.com",
+      "domain": "microsoft.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7862722277641296,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.004031491931527853,
+        "defacement": 0.0015897287521511316,
+        "malware": 0.20810654759407043,
+        "phishing": 0.7862722277641296
+      }
+    },
+    {
+      "url": "https://www.microsoft.com",
+      "domain": "microsoft.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8256775140762329,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.018347231671214104,
+        "defacement": 0.005127855576574802,
+        "malware": 0.15084736049175262,
+        "phishing": 0.8256775140762329
+      }
+    },
+    {
+      "url": "https://microsoft.com/login",
+      "domain": "microsoft.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8973237872123718,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8973237872123718,
+        "defacement": 2.1485507772922574e-07,
+        "malware": 1.0629603366396623e-06,
+        "phishing": 0.10267499089241028
+      }
+    },
+    {
+      "url": "https://www.microsoft.com/account",
+      "domain": "microsoft.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8800970315933228,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.08409461379051208,
+        "defacement": 0.003039261791855097,
+        "malware": 0.03276904299855232,
+        "phishing": 0.8800970315933228
+      }
+    },
+    {
+      "url": "https://microsoft.com/docs",
+      "domain": "microsoft.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8621511459350586,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8621511459350586,
+        "defacement": 1.2127325135224964e-06,
+        "malware": 4.965866992279189e-06,
+        "phishing": 0.13784275949001312
+      }
+    },
+    {
+      "url": "https://api.microsoft.com/v1",
+      "domain": "microsoft.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7702665328979492,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.07583783566951752,
+        "defacement": 0.005184026435017586,
+        "malware": 0.14871154725551605,
+        "phishing": 0.7702665328979492
+      }
+    },
+    {
+      "url": "https://microsoft.com/products",
+      "domain": "microsoft.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8573008179664612,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8573008179664612,
+        "defacement": 1.2464222436392447e-06,
+        "malware": 5.282136953610461e-06,
+        "phishing": 0.14269264042377472
+      }
+    },
+    {
+      "url": "https://support.microsoft.com",
+      "domain": "microsoft.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8048385977745056,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.01284406241029501,
+        "defacement": 0.003337719477713108,
+        "malware": 0.17897960543632507,
+        "phishing": 0.8048385977745056
+      }
+    },
+    {
+      "url": "https://apple.com",
+      "domain": "apple.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7858241200447083,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.002023283625021577,
+        "defacement": 0.0012457866687327623,
+        "malware": 0.2109067440032959,
+        "phishing": 0.7858241200447083
+      }
+    },
+    {
+      "url": "https://www.apple.com",
+      "domain": "apple.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8043645620346069,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.0022752759978175163,
+        "defacement": 0.0036938253324478865,
+        "malware": 0.18966633081436157,
+        "phishing": 0.8043645620346069
+      }
+    },
+    {
+      "url": "https://apple.com/login",
+      "domain": "apple.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.9240933656692505,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.9240933656692505,
+        "defacement": 4.388734708982156e-08,
+        "malware": 2.313736473524841e-07,
+        "phishing": 0.07590640336275101
+      }
+    },
+    {
+      "url": "https://www.apple.com/account",
+      "domain": "apple.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8932967782020569,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.049872901290655136,
+        "defacement": 0.003711271332576871,
+        "malware": 0.05311904475092888,
+        "phishing": 0.8932967782020569
+      }
+    },
+    {
+      "url": "https://apple.com/docs",
+      "domain": "apple.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8918101787567139,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8918101787567139,
+        "defacement": 7.681294391659321e-07,
+        "malware": 3.0145959044602932e-06,
+        "phishing": 0.10818606615066528
+      }
+    },
+    {
+      "url": "https://api.apple.com/v1",
+      "domain": "apple.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.6508132815361023,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.008451790548861027,
+        "defacement": 0.0036251686979085207,
+        "malware": 0.33710989356040955,
+        "phishing": 0.6508132815361023
+      }
+    },
+    {
+      "url": "https://apple.com/products",
+      "domain": "apple.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.9025654196739197,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.9025654196739197,
+        "defacement": 2.815145023760124e-07,
+        "malware": 9.90011699286697e-07,
+        "phishing": 0.09743330627679825
+      }
+    },
+    {
+      "url": "https://support.apple.com",
+      "domain": "apple.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8097155690193176,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.002868601121008396,
+        "defacement": 0.001832405338063836,
+        "malware": 0.18558336794376373,
+        "phishing": 0.8097155690193176
+      }
+    },
+    {
+      "url": "https://github.com",
+      "domain": "github.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.7953530550003052,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.0033951227087527514,
+        "defacement": 0.0012607561657205224,
+        "malware": 0.19999100267887115,
+        "phishing": 0.7953530550003052
+      }
+    },
+    {
+      "url": "https://www.github.com",
+      "domain": "github.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8274012207984924,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.00845548789948225,
+        "defacement": 0.003872510977089405,
+        "malware": 0.1602708399295807,
+        "phishing": 0.8274012207984924
+      }
+    },
+    {
+      "url": "https://github.com/login",
+      "domain": "github.com",
+      "true_label": "benign",
+      "predicted_label": "benign",
+      "confidence": 0.8661695718765259,
+      "is_false_positive": false,
+      "probabilities": {
+        "benign": 0.8661695718765259,
+        "defacement": 9.549540891384822e-07,
+        "malware": 3.582186536732479e-06,
+        "phishing": 0.13382580876350403
+      }
+    },
+    {
+      "url": "https://www.github.com/account",
+      "domain": "github.com",
+      "true_label": "benign",
+      "predicted_label": "phishing",
+      "confidence": 0.8719469904899597,
+      "is_false_positive": true,
+      "probabilities": {
+        "benign": 0.09100719541311264,
+        "defacement": 0.003045315621420741,
+        "malware": 0.0340004563331604,
+        "phishing": 0.8719469904899597
+      }
+    }
+  ]
+}

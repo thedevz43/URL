@@ -1,0 +1,92 @@
+{
+  "timestamp": "2026-02-15T15:17:46.158223",
+  "models_evaluated": 4,
+  "selected_model": "url_detector_improved",
+  "results": [
+    {
+      "model_name": "url_detector_improved",
+      "training_date": "2026-02-11 23:45:02",
+      "parameters": 424132,
+      "test_accuracy": 0.9850029349327087,
+      "test_loss": 0.00411459244787693,
+      "benign_recall": 0.9932606054943002,
+      "phishing_recall": 0.9423955787012435,
+      "malware_recall": 0.9484034679636286,
+      "defacement_recall": 0.9990557129367328,
+      "fp_rate": 0.6739394505699825,
+      "detection_rate": 96.84104297214203,
+      "temporal_accuracy_drop": null,
+      "temporal_stability": null,
+      "adversarial_detection_rate": null,
+      "brand_fp_count": null,
+      "brand_fp_rate": null,
+      "estimated_latency_ms": 42.4132,
+      "mandatory_failures": [],
+      "passes_mandatory": true,
+      "governance_score": 66.99
+    },
+    {
+      "model_name": "url_detector",
+      "training_date": "2026-02-11 13:31:49",
+      "parameters": 345732,
+      "test_accuracy": 0.9743419885635376,
+      "test_loss": 0.08758687227964401,
+      "fp_rate": null,
+      "detection_rate": null,
+      "temporal_accuracy_drop": 1.6275006072763543,
+      "temporal_stability": 98.37249939272364,
+      "adversarial_detection_rate": 99.0,
+      "brand_fp_count": null,
+      "brand_fp_rate": null,
+      "estimated_latency_ms": 34.57320000000001,
+      "mandatory_failures": [
+        "FP Rate unknown",
+        "Detection Rate unknown"
+      ],
+      "passes_mandatory": false,
+      "governance_score": 35.56
+    },
+    {
+      "model_name": "url_detector_augmented",
+      "training_date": "2026-02-13T18:17:46.401561",
+      "parameters": 424132,
+      "test_accuracy": 0.9796501994132996,
+      "test_loss": 0.007166391704231501,
+      "fp_rate": null,
+      "detection_rate": null,
+      "temporal_accuracy_drop": null,
+      "temporal_stability": null,
+      "adversarial_detection_rate": null,
+      "brand_fp_count": null,
+      "brand_fp_rate": null,
+      "estimated_latency_ms": 42.4132,
+      "mandatory_failures": [
+        "FP Rate unknown",
+        "Detection Rate unknown"
+      ],
+      "passes_mandatory": false,
+      "governance_score": 9.6
+    },
+    {
+      "model_name": "url_detector_advanced",
+      "training_date": "2026-02-14T14:51:23.526264",
+      "parameters": 0,
+      "test_accuracy": 0,
+      "test_loss": 0,
+      "fp_rate": null,
+      "detection_rate": null,
+      "temporal_accuracy_drop": null,
+      "temporal_stability": null,
+      "adversarial_detection_rate": null,
+      "brand_fp_count": null,
+      "brand_fp_rate": null,
+      "estimated_latency_ms": 0.0,
+      "mandatory_failures": [
+        "FP Rate unknown",
+        "Detection Rate unknown"
+      ],
+      "passes_mandatory": false,
+      "governance_score": 0
+    }
+  ]
+}

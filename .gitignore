@@ -1,0 +1,54 @@
+# Python .pyc files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# TensorFlow/Keras
+*.h5
+*.hdf5
+*.keras
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Model files (too large for git)
+models/*.h5
+models/*.pkl
+*.pkl
+
+# Training outputs
+models/training_*.png
+models/evaluation_*.png
+models/*.json
+
+# Dataset (contains URLs that trigger GitHub secret scanning)
+data/*.csv
+data/malicious_phish*.csv
+*.csv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+temp/
+tmp/
+check_data.py

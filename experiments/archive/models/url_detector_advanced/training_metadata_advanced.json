@@ -1,0 +1,151 @@
+{
+  "training_date": "2026-02-14T14:51:23.526264",
+  "model_version": "advanced_3branch_v1",
+  "configuration": {
+    "data_path": "data/malicious_phish_final.csv",
+    "model_save_path": "models/url_detector_advanced.h5",
+    "preprocessor_save_path": "models/preprocessor_advanced.pkl",
+    "feature_extractor_save_path": "models/feature_extractor_advanced.pkl",
+    "metadata_save_path": "models/training_metadata_advanced.json",
+    "history_save_path": "models/training_history_advanced.json",
+    "vocab_size": 70,
+    "max_url_length": 200,
+    "max_domain_length": 100,
+    "n_features": 20,
+    "batch_size": 512,
+    "epochs": 30,
+    "initial_lr": 0.002,
+    "min_lr": 1e-06,
+    "validation_split": 0.12,
+    "test_split": 0.12,
+    "random_seed": 42,
+    "class_weights": {
+      "0": 0.35,
+      "1": 1.65,
+      "2": 1.5,
+      "3": 6.5
+    },
+    "use_mc_dropout": true,
+    "dropout_rate": 0.3,
+    "label_smoothing": 0.1
+  },
+  "dataset_stats": {
+    "total_samples": 676384,
+    "train_samples": 514051,
+    "val_samples": 81166,
+    "test_samples": 81167,
+    "class_distribution": {
+      "benign": 451233,
+      "phishing": 105448,
+      "defacement": 95308,
+      "malware": 24395
+    }
+  },
+  "model_architecture": {
+    "total_parameters": 564948,
+    "architecture": "3-branch (URL CNN + Domain CNN + Handcrafted Features)",
+    "branches": {
+      "A": "URL CNN - Multi-scale convolutions + MC Dropout + GlobalMaxPool",
+      "B": "Domain CNN - Domain-specific convolutions + MC Dropout + GlobalMaxPool",
+      "C": "Feature Processing - 18 handcrafted features + Dense layers"
+    },
+    "fusion": "Attention mechanism + Residual connection",
+    "uncertainty": "Monte Carlo Dropout (active during inference)",
+    "calibration": "Label smoothing + Temperature scaling ready"
+  },
+  "training_results": {
+    "epochs_trained": 30,
+    "best_epoch": 28,
+    "final_train_loss": 0.06992055475711823,
+    "final_train_accuracy": 0.9915436506271362,
+    "final_val_loss": 0.04764632135629654,
+    "final_val_accuracy": 0.9842298626899719,
+    "best_val_accuracy": 0.9851661920547485
+  },
+  "test_results": {
+    "loss": 0.0476001612842083,
+    "accuracy": 0.9852156639099121,
+    "precision": 0.9886833429336548,
+    "recall": 0.9784148931503296,
+    "auc": 0.9980031251907349
+  },
+  "per_class_performance": {
+    "benign": {
+      "precision": 0.9878841282079525,
+      "recall": 0.9938133668211786,
+      "f1-score": 0.9908398773740368,
+      "support": 54149.0
+    },
+    "defacement": {
+      "precision": 0.9927869992178674,
+      "recall": 0.9988633382880125,
+      "f1-score": 0.99581589958159,
+      "support": 11437.0
+    },
+    "phishing": {
+      "precision": 0.990343347639485,
+      "recall": 0.9460198155107619,
+      "f1-score": 0.9676742966975362,
+      "support": 2927.0
+    },
+    "malware": {
+      "precision": 0.9619854721549637,
+      "recall": 0.9419155998103367,
+      "f1-score": 0.9518447532343076,
+      "support": 12654.0
+    },
+    "accuracy": 0.9847105350696712,
+    "macro avg": {
+      "precision": 0.983249986805067,
+      "recall": 0.9701530301075725,
+      "f1-score": 0.9765437067218677,
+      "support": 81167.0
+    },
+    "weighted avg": {
+      "precision": 0.9846260390500676,
+      "recall": 0.9847105350696712,
+      "f1-score": 0.9846262783804005,
+      "support": 81167.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      53814,
+      2,
+      3,
+      330
+    ],
+    [
+      0,
+      11424,
+      0,
+      13
+    ],
+    [
+      18,
+      12,
+      2769,
+      128
+    ],
+    [
+      642,
+      69,
+      24,
+      11919
+    ]
+  ],
+  "f1_scores": {
+    "macro": 0.9765437067218677,
+    "weighted": 0.9846262783804005
+  },
+  "addressed_limitations": {
+    "1_brand_false_positives": "Multi-branch architecture with domain specialization",
+    "2_adversarial_bypass": "Feature diversity + international training data",
+    "3_malware_drift": "Drift monitoring system available",
+    "4_international_performance": "15.7K international URLs in training",
+    "5_ood_detection": "MC Dropout variance + entropy metrics",
+    "6_drift_monitoring": "DriftDetector module implemented",
+    "7_uncertainty_rejection": "MC Dropout + confidence thresholds",
+    "8_whitelist_dependency": "Learned pattern recognition instead of rules"
+  }
+}

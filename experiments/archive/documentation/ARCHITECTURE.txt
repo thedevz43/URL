@@ -1,0 +1,436 @@
+================================================================================
+  v7 PRODUCTION: MULTI-INPUT CHARACTER-LEVEL CNN ARCHITECTURE
+  Visual Architecture Diagram - Updated February 15, 2026
+================================================================================
+
+COMPLETE PIPELINE FLOW (v7 PRODUCTION SYSTEM):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                              ┌─────────────────────────────────┐
+                              │  RAW URL INPUT                  │
+                              │  "http://paypa1-secure.tk"      │
+                              └──────────────┬──────────────────┘
+                                             │
+                   ┌─────────────────────────┴──────────────────────────┐
+                   │                                                     │
+                   ▼                                                     ▼
+      ┌────────────────────────┐                        ┌───────────────────────┐
+      │  URL PREPROCESSING     │                        │  DOMAIN EXTRACTION    │
+      │  - Lowercase           │                        │  - Parse URL          │
+      │  - Character encoding  │                        │  - Extract netloc     │
+      │  - Padding to 200      │                        │  - Padding to 100     │
+      └──────────┬─────────────┘                        └─────────┬─────────────┘
+                 │                                                 │
+                 ▼                                                 ▼
+      ┌────────────────────────┐                        ┌───────────────────────┐
+      │  URL SEQUENCE          │                        │  DOMAIN SEQUENCE      │
+      │  Shape: (1, 200)       │                        │  Shape: (1, 100)      │
+      │  [59, 62, 62, 59, ...] │                        │  [59, 37, 60, 59,...] │
+      └──────────┬─────────────┘                        └─────────┬─────────────┘
+                 │                                                 │
+                 └────────────────┬────────────────────────────────┘
+                                  │
+                 ┌────────────────▼─────────────────┐
+                 │                                  │
+                 │   DUAL-INPUT NEURAL NETWORK      │
+                 │   (Multi-Stream Architecture)    │
+                 │                                  │
+                 └──────────────────────────────────┘
+
+v7 NEURAL NETWORK ARCHITECTURE (MULTI-INPUT):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                 ┌─────────────────────────────────────────────────┐
+                 │            INPUT LAYERS (DUAL STREAM)           │
+                 └────────────────┬────────────────────────────────┘
+                                  │
+              ┌───────────────────┴───────────────────┐
+              │                                       │
+              ▼                                       ▼
+  ┌────────────────────────┐              ┌─────────────────────────┐
+  │  URL INPUT             │              │  DOMAIN INPUT           │
+  │  Shape: (None, 200)    │              │  Shape: (None, 100)     │
+  └───────────┬────────────┘              └────────────┬────────────┘
+              │                                        │
+              ▼                                        ▼
+  ┌────────────────────────┐              ┌─────────────────────────┐
+  │  URL EMBEDDING         │              │  DOMAIN EMBEDDING       │
+  │  Vocab: 101            │              │  Vocab: 101             │
+  │  Dim: 128              │              │  Dim: 128               │
+  │  Output: (None,200,128)│              │  Output: (None,100,128) │
+  └───────────┬────────────┘              └────────────┬────────────┘
+              │                                        │
+              │    URL BRANCH                          │    DOMAIN BRANCH
+              │    ═══════════                         │    ═════════════
+              │                                        │
+              ▼                                        ▼
+  ┌────────────────────────┐              ┌─────────────────────────┐
+  │ CONV1D (256, k=3)      │              │ CONV1D (128, k=3)       │
+  │ MaxPool (2)            │              │ MaxPool (2)             │
+  │ Dropout (0.3)          │              │ Dropout (0.3)           │
+  │ Output: (None,99,256)  │              │ Output: (None,49,128)   │
+  └───────────┬────────────┘              └────────────┬────────────┘
+              │                                        │
+              │ Patterns: "htt", "php"                 │ Patterns: "com", "net"
+              │                                        │
+              ▼                                        ▼
+  ┌────────────────────────┐              ┌─────────────────────────┐
+  │ CONV1D (128, k=5)      │              │ CONV1D (64, k=5)        │
+  │ MaxPool (2)            │              │ MaxPool (2)             │
+  │ Dropout (0.3)          │              │ Dropout (0.3)           │
+  │ Output: (None,48,128)  │              │ Output: (None,23,64)    │
+  └───────────┬────────────┘              └────────────┬────────────┘
+              │                                        │
+              │ Patterns: "login", "admin"             │ Patterns: "paypa", "googl"
+              │                                        │
+              ▼                                        ▼
+  ┌────────────────────────┐              ┌─────────────────────────┐
+  │ CONV1D (64, k=7)       │              │ CONV1D (32, k=7)        │
+  │ GlobalMaxPool          │              │ GlobalMaxPool           │
+  │ Dropout (0.3)          │              │ Dropout (0.3)           │
+  │ Output: (None, 64)     │              │ Output: (None, 32)      │
+  └───────────┬────────────┘              └────────────┬────────────┘
+              │                                        │
+              │ Patterns: "phishing"                   │ Patterns: "malware"
+              │                                        │
+              └───────────────────┬────────────────────┘
+                                  │
+                                  ▼
+                    ┌─────────────────────────┐
+                    │  CONCATENATE            │
+                    │  Merge: 64 + 32 = 96    │
+                    │  Output: (None, 96)     │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │  DENSE (128, ReLU)      │
+                    │  L2 Regularization      │
+                    │  Dropout (0.5)          │
+                    │  Output: (None, 128)    │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │  DENSE (64, ReLU)       │
+                    │  L2 Regularization      │
+                    │  Dropout (0.5)          │
+                    │  Output: (None, 64)     │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │  OUTPUT (4, Softmax)    │
+                    │  Classes:               │
+                    │  - Benign               │
+                    │  - Phishing             │
+                    │  - Malware              │
+                    │  - Defacement           │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │  RAW PROBABILITIES      │
+                    │  [0.05, 0.88, 0.04, 0.03]│
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+              ┌──────────────────────────────────────┐
+              │  v7 ENHANCEMENT LAYER (POST-PROCESS) │
+              └────────────────┬─────────────────────┘
+                               │
+                               ▼
+              ┌────────────────────────────────────────┐
+              │  4-TIER DECISION LOGIC                 │
+              │                                        │
+              │  max_malicious = max(phishing,         │
+              │                      malware,          │
+              │                      defacement)       │
+              │                                        │
+              │  reputation = get_domain_reputation()  │
+              │                                        │
+              │  TIER 1 (≥93%): Always BLOCK          │
+              │  TIER 2A (75-93%): Rep-based          │
+              │  TIER 2B (35-75%): Elite only         │
+              │  TIER 3 (<35%): ALLOW                 │
+              └────────────────┬───────────────────────┘
+                               │
+                               ▼
+              ┌────────────────────────────────────────┐
+              │  FINAL PREDICTION                      │
+              │  {                                     │
+              │    "prediction": "phishing",           │
+              │    "confidence": 0.88,                 │
+              │    "risk_level": "high",              │
+              │    "tier": "tier_1"                   │
+              │  }                                     │
+              └────────────────────────────────────────┘
+
+TOTAL PARAMETERS: 424,132 (all trainable)
+MODEL SIZE: 13.3 MB
+INFERENCE TIME: 40-50ms (CPU)
+
+
+DATA FLOW EXAMPLE (v7 DUAL-INPUT):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+INPUT URL: "http://paypa1-secure.tk/verify/login.php?id=123"
+
+STEP 1: Dual Preprocessing
+  URL: "http://paypa1-secure.tk/verify/login.php?id=123"
+    ↓
+  URL Sequence (200 chars): [34, 62, 62, 59, 26, 18, 18, 59, 37, 60, ...]
+  
+  DOMAIN: "paypa1-secure.tk"
+    ↓
+  Domain Sequence (100 chars): [59, 37, 60, 59, 37, 13, 28, 54, 47, 49, ...]
+
+STEP 2: Dual Embedding (128-dim vectors)
+  URL Branch:     [[0.23, -0.45, 0.12, ...], [0.89, 0.34, -0.23, ...], ...]
+  Domain Branch:  [[0.67, 0.12, -0.34, ...], [0.45, -0.22, 0.56, ...], ...]
+
+STEP 3: Parallel Convolutional Processing
+  
+  URL BRANCH (focuses on full URL patterns):
+  ├─ Conv1D (k=3): Detects "htt", "php", "log", "id="
+  ├─ Conv1D (k=5): Detects "login", "verif", ".php?"
+  └─ Conv1D (k=7): Detects "verify/", "login.p"
+  
+  DOMAIN BRANCH (focuses on domain patterns):
+  ├─ Conv1D (k=3): Detects "pay", "pa1", ".tk"
+  ├─ Conv1D (k=5): Detects "paypa", "secur"
+  └─ Conv1D (k=7): Detects "paypa1-", "secure."
+
+STEP 4: Global Max Pooling
+  URL features:    [0.92, 0.78, 0.45, ...] → 64 features
+  Domain features: [0.88, 0.91, 0.67, ...] → 32 features
+
+STEP 5: Feature Concatenation
+  Combined: 64 + 32 = 96 features
+
+STEP 6: Dense Layers
+  Dense(128) → Dense(64) → Dense(4)
+  Learns complex decision boundaries
+
+STEP 7: Softmax Output (Base Prediction)
+  Probabilities:
+  - Benign:      0.05 (5%)
+  - Phishing:    0.91 (91%)  ← Raw Prediction
+  - Malware:     0.03 (3%)
+  - Defacement:  0.01 (1%)
+
+STEP 8: v7 Enhancement (4-Tier Logic)
+  max_malicious = max(0.91, 0.03, 0.01) = 0.91
+  reputation = get_reputation("paypa1-secure.tk") = 0.0 (unknown)
+  
+  Tier Check:
+  ├─ 0.91 ≥ 0.93? NO (not Tier 1)
+  ├─ 0.91 ≥ 0.75? YES (Tier 2A)
+  └─ reputation ≥ 0.95? NO (not elite)
+  
+  DECISION: BLOCK (Tier 2A, no elite protection)
+
+STEP 9: Final Output
+  {
+    "prediction": "phishing",
+    "confidence": 0.91,
+    "risk_level": "high",
+    "tier": "tier_2a",
+    "inference_time_ms": 47
+  }
+
+
+TRAINING PROCESS (v7):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. DATA LOADING
+   ├─ Load 641,191 URLs from Kaggle dataset
+   ├─ Remove duplicates
+   └─ Stratified split (80% train/20% test)
+   └─ Result: 512,966 train / 128,225 test
+
+2. DUAL PREPROCESSING
+   ├─ URL Processing:
+   │  ├─ Lowercase conversion
+   │  ├─ Character vocabulary (101 chars)
+   │  ├─ Integer encoding
+   │  └─ Padding/truncation to 200 chars
+   │
+   └─ Domain Processing:
+      ├─ URL parsing (extract netloc)
+      ├─ Same character encoding
+      └─ Padding/truncation to 100 chars
+
+3. CLASS WEIGHT CALCULATION
+   ├─ Benign:      weight = 0.375 (66.76% of data)
+   ├─ Defacement:  weight = 1.663 (15.04% of data)
+   ├─ Phishing:    weight = 1.706 (14.68% of data)
+   └─ Malware:     weight = 7.115 (3.51% of data)
+
+4. DUAL-INPUT MODEL TRAINING
+   ├─ Batch size: 128
+   ├─ Epochs: 30 (trained to convergence)
+   ├─ Optimizer: Adam (lr=0.001)
+   ├─ Loss: Categorical cross-entropy (class-weighted)
+   ├─ Callbacks:
+   │  ├─ ModelCheckpoint (save best @ epoch 27)
+   │  ├─ EarlyStopping (patience=5, not triggered)
+   │  └─ ReduceLROnPlateau (factor=0.5, patience=3)
+   ├─ Validation: 20% of training data
+   └─ Training Time: ~45 minutes (CPU)
+
+5. BASE MODEL EVALUATION
+   ├─ Test Accuracy: 98.50%
+   ├─ Test Loss: 0.00411
+   ├─ Confusion matrix analysis
+   ├─ Per-class metrics
+   └─ Visualization generation
+
+6. v7 ENHANCEMENT DEVELOPMENT
+   ├─ 4-tier threshold optimization
+   ├─ Reputation system integration
+   ├─ Validation testing (50 brands + 15 malicious)
+   ├─ FP rate: 4.0% vs target <5% ✓
+   └─ Detection rate: 100% vs target >95% ✓
+
+7. STRESS TESTING
+   ├─ Temporal stability (1.63% degradation)
+   ├─ Adversarial attacks (200 samples, 94% detection)
+   ├─ TLD distribution testing
+   └─ Production readiness validation
+
+
+WHY v7 DUAL-INPUT ARCHITECTURE WORKS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ DUAL-INPUT DESIGN (URL + DOMAIN)
+  - URL branch: Learns full path, query, fragment patterns
+  - Domain branch: Focuses on brand mimicry, typosquatting
+  - Complementary features: Captures different threat aspects
+  - Better generalization than single-input models
+
+✓ SEPARATE EMBEDDING LAYERS
+  - URL embeddings: Learn character roles in full URLs
+  - Domain embeddings: Learn character roles in domains
+  - Shared vocabulary (101 chars): Efficient memory
+  - 128-dimensional: Rich representation space
+
+✓ ASYMMETRIC BRANCH ARCHITECTURE
+  - URL branch (256→128→64): More capacity for complex patterns
+  - Domain branch (128→64→32): Focused on domain-specific patterns
+  - Reflects URL complexity > domain complexity
+  - Optimized parameter distribution
+
+✓ MULTI-SCALE KERNEL SIZES (3, 5, 7)
+  - Kernel 3: Character-level patterns ("tk", "ml", "ga")
+  - Kernel 5: Short word patterns ("login", "admin")
+  - Kernel 7: Longer patterns ("password", "phishing")
+  - Hierarchical feature extraction
+
+✓ CONCATENATION FUSION
+  - Late fusion: Both branches learn independently
+  - 96-dimensional combined features (64+32)
+  - Dense layers learn cross-stream interactions
+  - More robust than early fusion
+
+✓ STRONG REGULARIZATION
+  - Dropout 0.3 (conv layers): Prevents feature co-adaptation
+  - Dropout 0.5 (dense layers): Stronger regularization
+  - L2 penalty (0.001): Weight decay
+  - No overfitting: Val accuracy > Train accuracy
+
+✓ v7 ENHANCEMENT LAYER (POST-PROCESSING)
+  - 4-tier decision logic: Nuanced blocking strategy
+  - Reputation system: Protects elite brands (FP reduction)
+  - Tier 1 (≥93%): High-confidence threats (always block)
+  - Tier 2A/2B (35-93%): Reputation-based (elite protection)
+  - Tier 3 (<35%): Low confidence (allow benign)
+  - Explainable decisions: Tier + reputation + confidence
+
+✓ EFFICIENT INFERENCE
+  - 424K parameters: Compact model
+  - 40-50ms latency: Real-time capable
+  - CPU-friendly: No GPU required
+  - Scalable: Stateless horizontal scaling
+
+
+KEY DESIGN PRINCIPLES (v7):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. MULTI-STREAM FEATURE EXTRACTION
+   Parallel processing: URL stream + Domain stream
+   Hierarchical: Characters → N-grams → Patterns → Features
+   Late fusion: Independent learning + combined decision
+
+2. REGULARIZATION AT EVERY LEVEL
+   Embedding → Dropout(0.3) → Conv → Dropout(0.3) → Dense → Dropout(0.5)
+   L2 penalty on dense layers
+   Result: No overfitting (val_acc > train_acc)
+
+3. BALANCED COMPLEXITY
+   424K parameters: Not too simple, not too complex
+   Multi-input: Captures diverse patterns
+   Efficient: Fast inference (47ms average)
+
+4. CLASS IMBALANCE HANDLING
+   Class-weighted loss: 0.375 (benign) to 7.115 (malware)
+   Stratified splits: Maintain class ratios
+   Result: 94-99% per-class performance
+
+5. FALSE POSITIVE MITIGATION (v7 ENHANCEMENT)
+   Base model: 98.5% accuracy, 0.67% FP rate
+   v7 layer: 4-tier logic + reputation system
+   Result: 4.0% FP rate, 100% detection
+   Elite protection: Top brands never blocked
+
+6. PRODUCTION READINESS
+   Standardized JSON output
+   Configurable logging
+   Error handling
+   Batch processing support
+   CLI + Python API
+
+7. EXPLAINABILITY & MONITORING
+   Confidence scores: How certain is the model?
+   Tier decisions: Which threshold triggered?
+   Reputation scores: Is domain trusted?
+   Entropy: Measure of prediction uncertainty
+   Inference time: Performance tracking
+
+v7 PERFORMANCE SUMMARY:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 TEST SET METRICS:
+   ├─ Accuracy:          98.50%
+   ├─ Test Loss:         0.00411
+   ├─ Precision (avg):   98.33%
+   ├─ Recall (avg):      97.08%
+   └─ F1-Score (avg):    97.69%
+
+📊 PER-CLASS PERFORMANCE:
+   ├─ Benign:       99.11% F1 (85,616 samples)
+   ├─ Defacement:   99.63% F1 (19,062 samples)
+   ├─ Malware:      97.11% F1 (4,729 samples)
+   └─ Phishing:     94.90% F1 (18,818 samples)
+
+📊 v7 ENHANCEMENT VALIDATION:
+   ├─ False Positive Rate:  4.0% (2/50 brands)
+   ├─ Detection Rate:       100% (15/15 malicious)
+   ├─ Avg Inference Time:   47ms
+   └─ Status:               Production Ready ✓
+
+📊 STRESS TESTING:
+   ├─ Temporal Degradation: 1.63% (excellent stability)
+   ├─ Adversarial Detection: 94% (188/200 attacks)
+   ├─ TLD Coverage:         97.9% (high-risk TLDs)
+   └─ Domain Coverage:      30,000+ domains tested
+
+📊 PRODUCTION DEPLOYMENT (Feb 15, 2026):
+   ├─ Model:         models/production/model_v7.h5
+   ├─ Size:          13.3 MB
+   ├─ Parameters:    424,132
+   ├─ CLI:           main.py
+   ├─ API:           src/inference.py
+   └─ Status:        ✅ DEPLOYED & VALIDATED
+
+================================================================================

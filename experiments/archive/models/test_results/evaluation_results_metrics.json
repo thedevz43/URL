@@ -1,0 +1,57 @@
+{
+  "accuracy": 0.9777968414895691,
+  "precision_macro": 0.9632646330618474,
+  "recall_macro": 0.975297471970321,
+  "f1_macro": 0.9689981741530971,
+  "precision_weighted": 0.9787628170985915,
+  "recall_weighted": 0.9777968414895691,
+  "f1_weighted": 0.9780803419778086,
+  "confusion_matrix": [
+    [
+      83694,
+      8,
+      74,
+      1840
+    ],
+    [
+      0,
+      19025,
+      9,
+      28
+    ],
+    [
+      5,
+      3,
+      4557,
+      164
+    ],
+    [
+      543,
+      96,
+      77,
+      18102
+    ]
+  ],
+  "per_class_metrics": {
+    "benign": {
+      "total": 85616,
+      "correct": 83694,
+      "accuracy": 0.9775509250607363
+    },
+    "defacement": {
+      "total": 19062,
+      "correct": 19025,
+      "accuracy": 0.9980589654810618
+    },
+    "malware": {
+      "total": 4729,
+      "correct": 4557,
+      "accuracy": 0.9636286741382957
+    },
+    "phishing": {
+      "total": 18818,
+      "correct": 18102,
+      "accuracy": 0.9619513232011904
+    }
+  }
+}

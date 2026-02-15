@@ -1,0 +1,421 @@
+================================================================================
+  FILE INDEX - MALICIOUS URL DETECTION PROJECT
+  Complete Reference Guide
+================================================================================
+
+PROJECT ROOT: C:\Users\thede\OneDrive\Desktop\DNN
+
+================================================================================
+CORE SOURCE CODE FILES
+================================================================================
+
+📂 src/
+├── 📄 preprocess.py (9,110 bytes)
+│   Purpose: Data preprocessing and character-level encoding
+│   Classes:
+│     - URLPreprocessor: Main preprocessing class
+│   Functions:
+│     - load_and_preprocess_data(): Complete data pipeline
+│     - url_to_sequence(): Convert URL to integer sequence
+│     - encode_urls(): Batch encoding with padding
+│     - encode_labels(): Label encoding to categorical format
+│   Key Features:
+│     ✓ Character vocabulary definition (~100 chars)
+│     ✓ Integer sequence encoding
+│     ✓ Padding/truncation to max_length=200
+│     ✓ One-hot label encoding
+│     ✓ Stratified train-test split
+│
+├── 📄 model.py (8,184 bytes)
+│   Purpose: CNN architecture definition
+│   Functions:
+│     - build_char_cnn_model(): Main CNN architecture
+│     - build_alternative_lstm_model(): LSTM variant
+│   Architecture:
+│     ✓ Embedding layer (128 dimensions)
+│     ✓ 3 Conv1D blocks (256, 128, 64 filters)
+│     ✓ MaxPooling after each block
+│     ✓ Dropout regularization
+│     ✓ Dense layers (128, 64 units)
+│     ✓ Softmax output (4 classes)
+│   Total Parameters: ~2.5 million
+│
+├── 📄 train.py (9,681 bytes)
+│   Purpose: Training pipeline and callbacks
+│   Functions:
+│     - calculate_class_weights(): Handle imbalanced dataset
+│     - create_callbacks(): ModelCheckpoint, EarlyStopping, ReduceLROnPlateau
+│     - train_model(): Main training loop
+│     - plot_training_history(): Visualization
+│     - save_training_metadata(): Save training stats
+│   Features:
+│     ✓ Class weight calculation
+│     ✓ Early stopping (patience=5)
+│     ✓ Learning rate reduction
+│     ✓ Training history visualization
+│     ✓ Metadata logging
+│
+└── 📄 evaluate.py (12,363 bytes)
+    Purpose: Model evaluation and metrics
+    Functions:
+      - evaluate_model(): Comprehensive evaluation
+      - analyze_difficult_cases(): Per-class analysis
+      - plot_evaluation_results(): Visualizations
+    Metrics:
+      ✓ Confusion matrix
+      ✓ Precision, Recall, F1-score (macro & weighted)
+      ✓ Per-class performance
+      ✓ Prediction confidence analysis
+    Outputs:
+      ✓ evaluation_results.png (4 plots)
+      ✓ evaluation_results_metrics.json
+
+================================================================================
+MAIN APPLICATION FILE
+================================================================================
+
+📄 main.py (12,786 bytes)
+   Purpose: End-to-end orchestration and CLI interface
+   Functions:
+     - train_pipeline(): Complete training workflow
+     - load_trained_model(): Load saved model
+     - predict_url(): Single URL classification
+     - inference_demo(): Demo on sample URLs
+     - interactive_mode(): Interactive testing
+     - main(): CLI argument parsing
+   
+   Command-Line Interface:
+     python main.py --train              # Train model
+     python main.py --train --epochs 30  # Custom training
+     python main.py --demo               # Demo inference
+     python main.py --interactive        # Interactive mode
+     python main.py --predict <url>      # Single URL prediction
+   
+   Features:
+     ✓ Argument parsing
+     ✓ Full pipeline integration
+     ✓ Real-time inference
+     ✓ Human-readable output
+     ✓ Risk assessment
+
+================================================================================
+UTILITY & TESTING FILES
+================================================================================
+
+📄 verify_setup.py (3,620 bytes)
+   Purpose: Setup verification and diagnostics
+   Checks:
+     ✓ Python version compatibility
+     ✓ All packages installed
+     ✓ Dataset presence and validity
+     ✓ Directory structure
+     ✓ Source files present
+     ✓ TensorFlow GPU availability
+   Usage: python verify_setup.py
+
+📄 test_modules.py (5,426 bytes)
+   Purpose: Individual module testing
+   Functions:
+     - test_preprocessing(): Test character encoding
+     - test_model(): Test architecture building
+     - test_full_preprocessing(): Test on sample data
+     - test_inference(): Test trained model
+   Usage:
+     python test_modules.py --all         # All tests
+     python test_modules.py --preprocess  # Preprocessing only
+     python test_modules.py --model       # Model only
+     python test_modules.py --inference   # Inference only
+
+📄 setup.ps1
+   Purpose: Automated Windows PowerShell setup script
+   Actions:
+     1. Checks Python version
+     2. Creates virtual environment
+     3. Activates environment
+     4. Installs dependencies
+     5. Runs verification
+   Usage: .\setup.ps1
+
+================================================================================
+DOCUMENTATION FILES
+================================================================================
+
+📄 README.md (13,958 bytes)
+   Purpose: Comprehensive project documentation
+   Sections:
+     1. Project Overview
+     2. Dataset description
+     3. Architecture rationale
+     4. Installation instructions
+     5. Usage examples
+     6. Model performance
+     7. Methodology
+     8. Limitations
+     9. Future improvements
+     10. Troubleshooting
+   Length: ~4,000 words
+   Format: GitHub Markdown with tables, code blocks, and formatting
+
+📄 QUICKSTART.md (3,258 bytes)
+   Purpose: Quick reference guide
+   Content:
+     - 5-step setup process
+     - Common commands
+     - Troubleshooting tips
+     - Directory structure
+     - Expected results
+   Audience: Users who want to get started quickly
+
+📄 USAGE_GUIDE.txt (18,788 bytes)
+   Purpose: Detailed step-by-step usage instructions
+   Sections:
+     1. Initial setup (automated & manual)
+     2. Training the model
+     3. Using the trained model
+     4. Testing & debugging
+     5. Understanding output
+     6. Troubleshooting
+     7. Advanced usage
+   Length: ~5,000 words
+   Format: Plain text with ASCII art and formatting
+
+📄 ARCHITECTURE.txt (17,067 bytes)
+   Purpose: Visual architecture diagram and explanation
+   Content:
+     - Complete pipeline flow diagram
+     - Layer-by-layer architecture
+     - Data flow example
+     - Training process visualization
+     - Design rationale
+   Format: ASCII art diagrams with detailed annotations
+
+📄 PROJECT_SUMMARY.txt (13,011 bytes)
+   Purpose: Project deliverables and completion checklist
+   Content:
+     - Deliverables checklist (all ✓)
+     - Project structure
+     - Running instructions
+     - Technical decisions & rationale
+     - Expected results
+     - Attack type analysis
+     - Limitations & future work
+     - File inventory
+   Audience: Project reviewers and stakeholders
+
+================================================================================
+CONFIGURATION FILES
+================================================================================
+
+📄 requirements.txt (224 bytes)
+   Purpose: Python package dependencies
+   Packages:
+     - tensorflow==2.15.0 (Deep learning framework)
+     - pandas==2.1.4 (Data manipulation)
+     - numpy==1.26.2 (Numerical computing)
+     - matplotlib==3.8.2 (Plotting)
+     - seaborn==0.13.0 (Statistical visualization)
+     - scikit-learn==1.3.2 (Metrics and preprocessing)
+     - tqdm==4.66.1 (Progress bars)
+   Installation: pip install -r requirements.txt
+
+📄 .gitignore
+   Purpose: Git version control ignore rules
+   Excludes:
+     - __pycache__/ and *.pyc files
+     - venv/ and virtual environments
+     - *.h5 and *.pkl model files
+     - Training outputs (*.png, *.json)
+     - IDE files (.vscode/, .idea/)
+     - OS files (.DS_Store, Thumbs.db)
+     - Temporary files
+
+================================================================================
+DATA DIRECTORY
+================================================================================
+
+📂 data/
+└── 📄 malicious_phish.csv (651,191 rows)
+    Purpose: Training dataset
+    Columns:
+      - url: URL string
+      - type: Label (benign, phishing, malware, defacement)
+    Size: ~52 MB
+    Source: Kaggle malicious URL dataset
+    Class Distribution:
+      - benign: 428,103 (65.7%)
+      - defacement: 96,457 (14.8%)
+      - phishing: 94,111 (14.5%)
+      - malware: 32,520 (5.0%)
+
+================================================================================
+MODELS DIRECTORY (Generated After Training)
+================================================================================
+
+📂 models/
+├── 📄 url_detector.h5
+│   Purpose: Trained Keras model
+│   Size: ~50 MB
+│   Format: HDF5
+│   Loading: keras.models.load_model('models/url_detector.h5')
+│
+├── 📄 preprocessor.pkl
+│   Purpose: Saved preprocessing configuration
+│   Size: ~10 KB
+│   Format: Pickle
+│   Contains:
+│     - Character vocabulary
+│     - Character-to-index mapping
+│     - Label encoder
+│     - Max length parameter
+│   Loading: URLPreprocessor.load('models/preprocessor.pkl')
+│
+├── 📄 training_history.png
+│   Purpose: Training curves visualization
+│   Plots:
+│     1. Training/validation loss
+│     2. Training/validation accuracy
+│     3. Training/validation precision
+│     4. Training/validation recall
+│   Format: PNG (high resolution, 300 DPI)
+│
+├── 📄 evaluation_results.png
+│   Purpose: Model evaluation visualization
+│   Plots:
+│     1. Confusion matrix (counts)
+│     2. Confusion matrix (normalized)
+│     3. Per-class recall
+│     4. Prediction confidence distribution
+│   Format: PNG (high resolution, 300 DPI)
+│
+└── 📄 training_metadata.json
+    Purpose: Training statistics and metadata
+    Content:
+      - Training date/time
+      - Number of epochs
+      - Final metrics (loss, accuracy)
+      - Best validation metrics
+      - Model parameter count
+      - Complete training history
+    Format: JSON
+
+================================================================================
+FILE SIZE SUMMARY
+================================================================================
+
+Source Code:
+  src/preprocess.py     9,110 bytes
+  src/model.py          8,184 bytes
+  src/train.py          9,681 bytes
+  src/evaluate.py      12,363 bytes
+  main.py              12,786 bytes
+  verify_setup.py       3,620 bytes
+  test_modules.py       5,426 bytes
+  ─────────────────────────────
+  Total Source Code:   61,170 bytes (~60 KB)
+
+Documentation:
+  README.md            13,958 bytes
+  QUICKSTART.md         3,258 bytes
+  USAGE_GUIDE.txt      18,788 bytes
+  ARCHITECTURE.txt     17,067 bytes
+  PROJECT_SUMMARY.txt  13,011 bytes
+  ─────────────────────────────
+  Total Documentation: 66,082 bytes (~65 KB)
+
+Configuration:
+  requirements.txt        224 bytes
+  .gitignore             ~500 bytes
+  setup.ps1            ~2,000 bytes
+
+Data:
+  malicious_phish.csv  ~52,000,000 bytes (~52 MB)
+
+Models (after training):
+  url_detector.h5      ~50,000,000 bytes (~50 MB)
+  preprocessor.pkl        ~10,000 bytes (~10 KB)
+  *.png files             ~1,000,000 bytes (~1 MB each)
+
+TOTAL PROJECT SIZE: ~103 MB (before training), ~155 MB (after training)
+
+================================================================================
+LINES OF CODE
+================================================================================
+
+Source Code:
+  src/preprocess.py       ~250 lines
+  src/model.py            ~220 lines
+  src/train.py            ~260 lines
+  src/evaluate.py         ~350 lines
+  main.py                 ~450 lines
+  verify_setup.py         ~130 lines
+  test_modules.py         ~160 lines
+  ───────────────────────────────
+  Total LOC:            ~1,820 lines
+
+Comments & Docstrings:   ~680 lines
+Blank Lines:             ~300 lines
+───────────────────────────────
+Total Lines:           ~2,800 lines
+
+Documentation:
+  README.md             ~350 lines (~4,000 words)
+  QUICKSTART.md          ~95 lines (~900 words)
+  USAGE_GUIDE.txt       ~615 lines (~5,500 words)
+  ARCHITECTURE.txt      ~485 lines (~3,800 words)
+  PROJECT_SUMMARY.txt   ~375 lines (~3,500 words)
+  ───────────────────────────────
+  Total Documentation: ~1,920 lines (~17,700 words)
+
+GRAND TOTAL: ~4,720 lines of code + documentation
+
+================================================================================
+QUICK FILE REFERENCE
+================================================================================
+
+Need to...                          Open this file:
+─────────────────────────────────   ────────────────────────────
+Understand preprocessing            src/preprocess.py
+Understand model architecture       src/model.py
+Understand training process         src/train.py
+Understand evaluation metrics       src/evaluate.py
+Run the project                     main.py
+Set up environment                  setup.ps1
+Verify setup                        verify_setup.py
+Test modules                        test_modules.py
+Learn about the project             README.md
+Get started quickly                 QUICKSTART.md
+Detailed usage instructions         USAGE_GUIDE.txt
+Understand architecture             ARCHITECTURE.txt
+See project overview                PROJECT_SUMMARY.txt
+See this index                      FILE_INDEX.txt
+
+================================================================================
+PROJECT STATUS
+================================================================================
+
+✅ All source code files: COMPLETE
+✅ All documentation files: COMPLETE
+✅ All utility files: COMPLETE
+✅ Dataset: PRESENT (651,191 URLs)
+✅ Project structure: ORGANIZED
+✅ Code quality: PRODUCTION-READY
+✅ Documentation: COMPREHENSIVE
+
+Total Deliverables: 15 files + documentation
+Lines of Code: ~2,800
+Documentation: ~18,000 words
+Status: READY FOR USE
+
+================================================================================
+NEXT STEPS FOR USER
+================================================================================
+
+1. Review this index to understand project structure
+2. Read QUICKSTART.md for immediate start
+3. Run setup.ps1 to configure environment
+4. Run verify_setup.py to check installation
+5. Train model: python main.py --train
+6. Test model: python main.py --demo
+7. Review README.md for complete documentation
+
+================================================================================

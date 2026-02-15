@@ -1,0 +1,573 @@
+================================================================================
+  COMPLETE USAGE GUIDE - MALICIOUS URL DETECTION PROJECT
+  Step-by-Step Instructions for Running in VS Code
+================================================================================
+
+TABLE OF CONTENTS:
+1. Initial Setup (First Time Only)
+2. Training the Model
+3. Using the Trained Model
+4. Testing & Debugging
+5. Understanding the Output
+6. Troubleshooting
+7. Advanced Usage
+
+================================================================================
+1. INITIAL SETUP (FIRST TIME ONLY)
+================================================================================
+
+METHOD A: Automated Setup (Recommended)
+────────────────────────────────────────
+
+Open VS Code terminal (Ctrl+`) and run:
+
+    .\setup.ps1
+
+This will automatically:
+- Check Python version
+- Create virtual environment
+- Install all dependencies
+- Verify setup
+
+METHOD B: Manual Setup
+──────────────────────
+
+Step 1: Create virtual environment
+
+    python -m venv venv
+
+Step 2: Activate virtual environment
+
+    .\venv\Scripts\Activate.ps1
+
+    # If you get execution policy error:
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+Step 3: Install dependencies
+
+    pip install --upgrade pip
+    pip install -r requirements.txt
+
+Step 4: Verify installation
+
+    python verify_setup.py
+
+Expected output: All checks should pass ✓
+
+================================================================================
+2. TRAINING THE MODEL
+================================================================================
+
+BASIC TRAINING (Recommended for First Run)
+───────────────────────────────────────────
+
+Command:
+    python main.py --train
+
+What happens:
+- Loads 651,191 URLs from data/malicious_phish.csv
+- Preprocesses and encodes at character level
+- Trains CNN for 20 epochs
+- Saves model to models/url_detector.h5
+- Generates evaluation metrics
+- Creates visualizations
+
+Expected time:
+- CPU: 45-60 minutes
+- GPU: 8-10 minutes
+
+Output files created:
+    models/url_detector.h5           ← Trained model
+    models/preprocessor.pkl          ← Preprocessing config
+    models/training_history.png      ← Training curves
+    models/evaluation_results.png    ← Performance metrics
+    models/training_metadata.json    ← Training statistics
+
+CUSTOM TRAINING PARAMETERS
+───────────────────────────
+
+Train with more epochs:
+    python main.py --train --epochs 30
+
+Train with larger batch size (if you have more RAM):
+    python main.py --train --batch-size 256
+
+Train with both:
+    python main.py --train --epochs 30 --batch-size 256
+
+MONITORING TRAINING PROGRESS
+─────────────────────────────
+
+During training, you'll see output like:
+
+    Epoch 1/20
+    4075/4075 [==============================] - 120s 29ms/step
+    - loss: 0.4523
+    - accuracy: 0.8234
+    - val_loss: 0.3012
+    - val_accuracy: 0.8956
+
+What to watch for:
+✓ Loss should decrease over time
+✓ Accuracy should increase over time
+✓ val_loss should be close to loss (not much higher)
+✓ Training should stop early if no improvement
+
+================================================================================
+3. USING THE TRAINED MODEL
+================================================================================
+
+INFERENCE DEMO (Pre-defined Test URLs)
+───────────────────────────────────────
+
+Command:
+    python main.py --demo
+
+What it does:
+- Loads trained model
+- Tests on 8 sample URLs (mix of benign and malicious)
+- Shows predictions with confidence scores
+- Displays summary table
+
+Sample output:
+    ┌───────────────────────────────────────────────┬──────────────┬────────┐
+    │ URL                                           │ Predicted    │ Conf.  │
+    ├───────────────────────────────────────────────┼──────────────┼────────┤
+    │ https://www.google.com                        │ benign       │ 99.8%  │
+    │ br-icloud.com.br                              │ phishing     │ 94.2%  │
+    │ http://www.824555.com/app/member/Sport...     │ malware      │ 87.3%  │
+    └───────────────────────────────────────────────┴──────────────┴────────┘
+
+INTERACTIVE MODE (Test Your Own URLs)
+──────────────────────────────────────
+
+Command:
+    python main.py --interactive
+
+What it does:
+- Opens interactive prompt
+- You enter URLs one by one
+- Shows detailed classification results
+- Type 'exit' or 'quit' to stop
+
+Example session:
+
+    Enter URL to classify: https://suspicious-paypal-login.com
+    
+    ════════════════════════════════════════════════════════════════
+    URL CLASSIFICATION RESULT
+    ════════════════════════════════════════════════════════════════
+    
+    URL: https://suspicious-paypal-login.com
+    
+    Predicted Class: PHISHING
+    Confidence: 0.9234 (92.34%)
+    
+    All class probabilities:
+      benign       [███░░░░░░░░░░░░] 0.0234 (2.34%)
+      phishing     [█████████████████████████████░] 0.9234 (92.34%)
+      malware      [██░░░░░░░░░░░░] 0.0432 (4.32%)
+      defacement   [░░░░░░░░░░░░░░] 0.0100 (1.00%)
+    
+    Risk Assessment:
+      ⚠️ HIGH RISK - URL classified as PHISHING
+      Action: Block or flag for review
+
+SINGLE URL PREDICTION
+──────────────────────
+
+Command:
+    python main.py --predict "https://example.com/path"
+
+What it does:
+- Classifies the specified URL
+- Shows detailed results
+- Exits after prediction
+
+Example:
+    python main.py --predict "https://www.github.com"
+    
+    Predicted Class: BENIGN
+    Confidence: 98.7%
+
+================================================================================
+4. TESTING & DEBUGGING
+================================================================================
+
+VERIFY SETUP
+────────────
+
+Command:
+    python verify_setup.py
+
+Checks:
+✓ Python version compatibility
+✓ All required packages installed
+✓ Dataset present and valid
+✓ Directory structure correct
+✓ Source files present
+✓ TensorFlow GPU availability
+
+TEST INDIVIDUAL MODULES
+───────────────────────
+
+Test all modules:
+    python test_modules.py --all
+
+Test specific modules:
+    python test_modules.py --preprocess    # Test preprocessing
+    python test_modules.py --model         # Test model building
+    python test_modules.py --full          # Test full pipeline (small sample)
+    python test_modules.py --inference     # Test inference (needs trained model)
+
+What it tests:
+- Character encoding correctness
+- Model architecture validity
+- Preprocessing pipeline
+- Inference functionality
+
+VIEW MODEL ARCHITECTURE
+───────────────────────
+
+Run model test to see architecture:
+    python test_modules.py --model
+
+Output shows:
+- Layer-by-layer structure
+- Parameter counts
+- Input/output shapes
+- Total parameters
+
+Or review the visual diagram:
+    cat ARCHITECTURE.txt    # Unix/Git Bash
+    type ARCHITECTURE.txt   # Windows CMD
+    Get-Content ARCHITECTURE.txt  # PowerShell
+
+================================================================================
+5. UNDERSTANDING THE OUTPUT
+================================================================================
+
+TRAINING OUTPUT FILES
+─────────────────────
+
+1. models/url_detector.h5
+   - Binary model file (~50MB)
+   - Contains trained weights
+   - Load with: keras.models.load_model()
+
+2. models/preprocessor.pkl
+   - Preprocessing configuration
+   - Character vocabulary mapping
+   - Label encoder
+   - Load with: URLPreprocessor.load()
+
+3. models/training_history.png
+   - 4 plots:
+     * Training/validation loss
+     * Training/validation accuracy
+     * Training/validation precision
+     * Training/validation recall
+   - Look for:
+     ✓ Decreasing loss
+     ✓ Increasing accuracy
+     ✓ Similar train/val curves (no overfitting)
+
+4. models/evaluation_results.png
+   - 4 plots:
+     * Confusion matrix (counts)
+     * Confusion matrix (normalized)
+     * Per-class recall
+     * Prediction confidence distribution
+   - Analyze:
+     * Which classes are confused with each other
+     * Which class has lowest recall
+     * Confidence of correct vs incorrect predictions
+
+5. models/training_metadata.json
+   - Training statistics
+   - Final metrics
+   - Training date/time
+   - Model parameters
+
+INTERPRETING PREDICTIONS
+─────────────────────────
+
+Prediction output includes:
+
+1. Predicted Class
+   - benign, phishing, malware, or defacement
+   - Final classification result
+
+2. Confidence Score
+   - 0.0 to 1.0 (0% to 100%)
+   - How certain the model is
+   - > 0.9 = Very confident
+   - 0.7-0.9 = Confident
+   - < 0.7 = Uncertain (review manually)
+
+3. All Class Probabilities
+   - Shows probability for each class
+   - Helps understand close calls
+   - Second-highest probability indicates confusion
+
+4. Risk Assessment
+   - Automated risk level
+   - Suggested action
+   - Based on class and confidence
+
+EVALUATION METRICS
+──────────────────
+
+After training, you'll see:
+
+Overall Metrics:
+- Accuracy: Overall correct predictions
+  * Expected: ~95%
+  * Measures: How often the model is right
+
+- Precision (Macro): Average precision across classes
+  * Expected: ~92%
+  * Measures: When model says "malicious", how often is it right?
+
+- Recall (Macro): Average recall across classes
+  * Expected: ~90%
+  * Measures: Of all malicious URLs, how many did we catch?
+
+- F1-Score (Macro): Harmonic mean of precision and recall
+  * Expected: ~91%
+  * Measures: Balance between precision and recall
+
+Per-Class Metrics:
+- Benign: ~97% (best performance - most data)
+- Defacement: ~87% (moderate - URL looks normal)
+- Phishing: ~87% (challenging - mimics legitimate)
+- Malware: ~87% (hardest - least data, obfuscation)
+
+Confusion Matrix:
+Shows which classes are confused with each other
+- Diagonal: Correct predictions
+- Off-diagonal: Misclassifications
+- Look for patterns of confusion
+
+================================================================================
+6. TROUBLESHOOTING
+================================================================================
+
+PROBLEM: "TensorFlow not found" or installation fails
+SOLUTION:
+    # Make sure Python version is 3.8-3.11 (not 3.12)
+    python --version
+    
+    # Try installing TensorFlow separately
+    pip install tensorflow==2.15.0 --no-cache-dir
+
+PROBLEM: "Out of memory" during training
+SOLUTION:
+    # Reduce batch size
+    python main.py --train --batch-size 64
+    
+    # Or use smaller sample for testing
+    python test_modules.py --full
+
+PROBLEM: "Model not found" when running demo/interactive
+SOLUTION:
+    # Train the model first
+    python main.py --train
+    
+    # Or check if model file exists
+    ls models/url_detector.h5
+
+PROBLEM: Training is very slow
+SOLUTION:
+    # Expected on CPU: 45-60 minutes
+    # To speed up:
+    # 1. Use GPU (10x faster)
+    # 2. Reduce epochs: --epochs 10
+    # 3. Test on sample first: python test_modules.py --full
+
+PROBLEM: "Execution policy" error when activating venv
+SOLUTION:
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+PROBLEM: Poor model performance
+SOLUTION:
+    # Train for more epochs
+    python main.py --train --epochs 30
+    
+    # Check for data issues
+    python verify_setup.py
+    
+    # Review training curves in models/training_history.png
+    # Look for overfitting or underfitting
+
+PROBLEM: Virtual environment not activating
+SOLUTION:
+    # PowerShell:
+    .\venv\Scripts\Activate.ps1
+    
+    # CMD:
+    venv\Scripts\activate.bat
+    
+    # Git Bash:
+    source venv/Scripts/activate
+
+================================================================================
+7. ADVANCED USAGE
+================================================================================
+
+PROGRAMMATIC USE
+────────────────
+
+Python script example:
+
+    from tensorflow import keras
+    from src.preprocess import URLPreprocessor
+    import numpy as np
+    
+    # Load model
+    model = keras.models.load_model('models/url_detector.h5')
+    preprocessor = URLPreprocessor.load('models/preprocessor.pkl')
+    
+    # Classify URL
+    url = "https://suspicious-site.com"
+    url_encoded = preprocessor.encode_urls([url])
+    prediction = model.predict(url_encoded)[0]
+    
+    # Get result
+    predicted_class = preprocessor.label_encoder.classes_[np.argmax(prediction)]
+    confidence = prediction[np.argmax(prediction)]
+    
+    print(f"Class: {predicted_class}, Confidence: {confidence:.2%}")
+
+BATCH PREDICTION
+────────────────
+
+For many URLs:
+
+    from tensorflow import keras
+    from src.preprocess import URLPreprocessor
+    import pandas as pd
+    
+    # Load model
+    model = keras.models.load_model('models/url_detector.h5')
+    preprocessor = URLPreprocessor.load('models/preprocessor.pkl')
+    
+    # Load URLs
+    urls = pd.read_csv('my_urls.csv')['url'].tolist()
+    
+    # Encode all URLs
+    urls_encoded = preprocessor.encode_urls(urls)
+    
+    # Batch prediction
+    predictions = model.predict(urls_encoded, batch_size=256)
+    
+    # Process results
+    results = []
+    for url, pred in zip(urls, predictions):
+        class_idx = np.argmax(pred)
+        class_name = preprocessor.label_encoder.classes_[class_idx]
+        confidence = pred[class_idx]
+        results.append({'url': url, 'class': class_name, 'confidence': confidence})
+    
+    # Save results
+    pd.DataFrame(results).to_csv('predictions.csv', index=False)
+
+FINE-TUNING ON NEW DATA
+────────────────────────
+
+To update model with new labeled URLs:
+
+    # Load existing model
+    model = keras.models.load_model('models/url_detector.h5')
+    
+    # Prepare new data (use existing preprocessor)
+    # ... preprocessing code ...
+    
+    # Continue training
+    model.fit(X_new, y_new, epochs=5, batch_size=128)
+    
+    # Save updated model
+    model.save('models/url_detector_v2.h5')
+
+EXPORT FOR PRODUCTION
+─────────────────────
+
+Convert to TensorFlow Lite for mobile/edge devices:
+
+    import tensorflow as tf
+    
+    # Load model
+    model = tf.keras.models.load_model('models/url_detector.h5')
+    
+    # Convert to TensorFlow Lite
+    converter = tf.lite.TFLiteConverter.from_keras_model(model)
+    tflite_model = converter.convert()
+    
+    # Save
+    with open('models/url_detector.tflite', 'wb') as f:
+        f.write(tflite_model)
+
+================================================================================
+QUICK REFERENCE COMMANDS
+================================================================================
+
+Setup:
+    .\setup.ps1                           # Automated setup
+    python verify_setup.py                # Verify installation
+
+Training:
+    python main.py --train                # Train with defaults
+    python main.py --train --epochs 30    # Custom epochs
+
+Inference:
+    python main.py --demo                 # Test on samples
+    python main.py --interactive          # Interactive mode
+    python main.py --predict <url>        # Single URL
+
+Testing:
+    python test_modules.py --all          # Test all modules
+    python verify_setup.py                # Verify setup
+
+Help:
+    python main.py                        # Show help
+    python main.py --help                 # Detailed help
+
+Documentation:
+    README.md            # Complete documentation
+    QUICKSTART.md        # Quick start guide
+    ARCHITECTURE.txt     # Architecture diagram
+    PROJECT_SUMMARY.txt  # Project overview
+
+================================================================================
+SUPPORT & RESOURCES
+================================================================================
+
+Documentation:
+- README.md: Comprehensive guide with methodology
+- QUICKSTART.md: Quick reference for common tasks
+- ARCHITECTURE.txt: Detailed architecture explanation
+- PROJECT_SUMMARY.txt: Project overview and deliverables
+
+Code Comments:
+- All source files are extensively commented
+- Each function has docstrings
+- Complex logic is explained inline
+
+Testing:
+- verify_setup.py: Diagnose setup issues
+- test_modules.py: Test individual components
+
+================================================================================
+PROJECT STATUS: PRODUCTION-READY ✓
+================================================================================
+
+This project is complete and ready to use. All components have been implemented,
+tested, and documented according to research-grade standards.
+
+For additional support:
+1. Review code comments in src/ files
+2. Check troubleshooting section above
+3. Run verify_setup.py for diagnostics
+4. Test individual modules with test_modules.py
+
+================================================================================
